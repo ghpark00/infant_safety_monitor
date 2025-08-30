@@ -1,0 +1,38 @@
+# Temporary files
+temp_audio/
+temp_clips/
+temp_images/
+temp_videos/
+path_to_your_temp_video_folder/
+result_videos/
+test_videos/
+Data/
+
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+
+# IDE specific files
+.idea/
+.vscode/
+
+# dotenv file
+.env
+
+
+node_modules/
+
+
+*.pt
+*.pth
+*.onnx
+*.h5
+*.ckpt
+*.weights
+
+
+.DS_Store

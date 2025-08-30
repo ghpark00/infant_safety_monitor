@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI 유아 안전 모니터링</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; }
+        h1 { text-align: center; color: #333; }
+        #video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* 이미지 아래 여백 제거 */
+        }
+        #status {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .fall-detected {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI 유아 안전 모니터링 시스템</h1>
+    <div id="video-container">
+        <img id="videoFeed" src="/video_feed" alt="Webcam Feed">
+    </div>
+    <div id="status">모니터링 중...</div>
+    <button onclick="startSaveVideo()">Save Video</button>
+    <script>
+        // 간단한 상태 업데이트 로직 (선택 사항)
+        const statusElement = document.getElementById('status');
+        const videoElement = document.getElementById('videoFeed');
+        let fallDetected = false;
+
+        // 이미지가 로드될 때마다 또는 주기적으로 상태 확인 가능
+        // (여기서는 간단히 에러 처리만 추가)
+        videoElement.onerror = function() {
+            statusElement.textContent = "Unable to connect to video stream. Make sure the server is running.";
+            statusElement.classList.add('fall-detected'); // 에러 상태 표시
+        };
+
+        function startSaveVideo() {
+            fetch("/test_fall", { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Video saved:", data);
+                    alert("Video has been saved and uploaded.");
+                })
+                .catch(error => console.error("Error saving video:", error));
+        }
+
+        // 참고: 실제 넘어짐 상태를 실시간으로 업데이트하려면 WebSocket 등을 사용하는 것이 더 좋을듯.
+        // 현재 구조는 비디오 스트림만 보여줍니다. 알림은 백엔드에서 직접 전송됨.
+    </script>
+</body>
+</html>
