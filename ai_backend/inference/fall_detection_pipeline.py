@@ -1,15 +1,14 @@
-# fall_detection_pipeline.py
 import numpy as np
 import torch
 import cv2
 
-from DetectorLoader import TinyYOLOv3_onecls
-from PoseEstimateLoader import SPPE_FastPose
+from ai_backend.model_runtime.DetectorLoader import TinyYOLOv3_onecls
+from ai_backend.model_runtime.PoseEstimateLoader import SPPE_FastPose
 from Track.Tracker import Detection, Tracker
-from ActionsEstLoader import TSSTG
+from ai_backend.model_runtime.ActionsEstLoader import TSSTG
 from Detection.Utils import ResizePadding
-from fn import draw_single
-from config import MAX_PERSON_COUNT
+from ai_backend.model_runtime.fn import draw_single
+from ai_backend.config import MAX_PERSON_COUNT
 from Detection.Utils import rescale_boxes # rescale_boxes 함수를 임포트
 
 # --- 전역 객체 ---

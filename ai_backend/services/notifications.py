@@ -1,12 +1,10 @@
-# yolo_inference.py (최종 수정 버전)
-
 import httpx
 import time
 import os
 import datetime
 import json
 
-from config import (
+from ai_backend.config import (
     MAX_PERSON_COUNT, SPRING_BOOT_OVERCROWD_URL,
     NOTIFICATION_COOLDOWN_SECONDS, SPRING_BOOT_FALL_URL
 )

@@ -8,6 +8,7 @@ from threading import Thread
 
 from Detection.Models import Darknet
 from Detection.Utils import non_max_suppression, ResizePadding
+from ai_backend.config import YOLO_CFG_PATH, YOLO_WEIGHT_PATH
 
 
 class TinyYOLOv3_onecls(object):
@@ -22,12 +23,8 @@ class TinyYOLOv3_onecls(object):
     """
     def __init__(self,
             input_size=416,
-            #config_file='Models/yolo-tiny-onecls/yolov3-tiny-onecls.cfg',
-            config_file=(
-                r'models\yolo-tiny-onecls\yolov3-tiny-onecls.cfg'),
-            #weight_file='Models/yolo-tiny-onecls/best-model.pth',
-            weight_file=(
-                r'models\yolo-tiny-onecls\best-model.pth'),
+            config_file=YOLO_CFG_PATH,
+            weight_file=YOLO_WEIGHT_PATH,
                 nms=0.2,   # 화질구지는 0.1,  생성형은 0.2
                 conf_thres=0.45,
                 device='cuda'):
@@ -112,7 +109,6 @@ class ThreadDetection(object):
 
     def __len__(self):
         return self.Q.qsize()
-
 
 
 

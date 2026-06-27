@@ -1,14 +1,22 @@
-# config.py
 import os
+from pathlib import Path
+
 from dotenv import load_dotenv
 
-load_dotenv() # .env 파일 로드 (선택 사항)
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PACKAGE_ROOT = Path(__file__).resolve().parent
+MODELS_DIR = PROJECT_ROOT / "models"
+
+load_dotenv(PROJECT_ROOT / ".env")
 
 # --- 비디오/넘어짐 감지 설정 ---
 # --- 모델 경로 설정 ---
 # 실제 모델 파일 이름과 경로에 맞게 수정.
-HUMAN_MODEL_PATH = r"models\yolo11m.pt"  # 사용자 코드의 yolo11m.pt 에 해당
-FALL_MODEL_PATH = r"models\best.pt"    # 사용자 코드의 best.pt 에 해당
+HUMAN_MODEL_PATH = str(MODELS_DIR / "yolo11m.pt")
+FALL_MODEL_PATH = str(MODELS_DIR / "best.pt")
+YOLO_CFG_PATH = str(MODELS_DIR / "yolo-tiny-onecls" / "yolov3-tiny-onecls.cfg")
+YOLO_WEIGHT_PATH = str(MODELS_DIR / "yolo-tiny-onecls" / "best-model.pth")
+TSSTG_WEIGHT_PATH = str(MODELS_DIR / "TSSTG" / "tsstg-model.pth")
 
 # --- 추론 설정 ---
 HUMAN_CONF_THRESHOLD = 0.4  # 사람 탐지 최소 신뢰도
@@ -32,14 +40,15 @@ NOTIFICATION_COOLDOWN_SECONDS = 10 # 알림 재전송 쿨다운 시간 (초)
 WEBCAM_INDEX = 0 # 사용할 웹캠 인덱스 (0: 기본 웹캠)
 
 # --- 임시 파일 설정 (추가) ---
-TEMP_IMAGE_FOLDER = "temp_images" # 임시 이미지를 저장할 폴더 이름
+TEMP_IMAGE_FOLDER = str(PROJECT_ROOT / "temp_images")
+TEMP_VIDEO_FOLDER = str(PROJECT_ROOT / "temp_videos")
 
 #===================================================================================================================================================================================================================
 #===================================================================================================================================================================================================================
 
 # --- 오디오/울음소리 감지 설정 (추가) ---
 # --- 모델 경로 설정 ---
-CRY_MODEL_PATH = r"models\my_model.h5" # 실제 Keras 모델 경로로 수정
+CRY_MODEL_PATH = str(MODELS_DIR / "my_model.h5")
 YAMNET_MODEL_HANDLE = "https://tfhub.dev/google/yamnet/1" # YAMNet 경로
 
 # --- 추론 설정 ---
@@ -53,4 +62,4 @@ SPRING_BOOT_CRY_URL = os.getenv("SPRING_BOOT_CRY_URL", "http://localhost:8080/ap
 CRY_NOTIFICATION_COOLDOWN_SECONDS = 15 # 울음소리 알림 쿨다운
 
 # --- 임시 파일 설정 (추가) ---
-TEMP_AUDIO_FOLDER = "temp_audio" # 임시 오디오 파일 저장 폴더
+TEMP_AUDIO_FOLDER = str(PROJECT_ROOT / "temp_audio")

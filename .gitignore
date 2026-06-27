@@ -38,8 +38,6 @@ node_modules/
 .DS_Store
 
 
-cat >> .gitignore <<'EOF'
-
 # logs
 nohup.out
 *.log
@@ -48,4 +46,3 @@ logs/
 # editor swap files
 *.swp
 *.swo
-EOF

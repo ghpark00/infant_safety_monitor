@@ -11,7 +11,7 @@ from torch.optim.adadelta import Adadelta
 from sklearn.model_selection import train_test_split
 
 from Actionsrecognition.Models import *
-from Visualizer import plot_graphs, plot_confusion_metrix
+from ai_backend.legacy.Visualizer import plot_graphs, plot_confusion_metrix
 
 
 save_folder = 'saved/TSSTG(pts+mot)-01(cf+hm-hm)'
