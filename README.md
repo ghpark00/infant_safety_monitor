@@ -10,11 +10,7 @@ This repository contains the FastAPI-based AI analysis server for the Infant Saf
 
 ### Real-time Monitoring Preview
 
-> Place your demo image here.
 ![Monitoring Preview](docs/ifs.png)
-```markdown
-![Monitoring Preview](docs/ifs.png)
-```
 
 Modern infant care environments require immediate response when safety-critical events occur, such as a child falling, crying after impact, or excessive crowding in a monitored area. However, continuous manual monitoring is difficult and error-prone.
 
@@ -82,11 +78,8 @@ The processed video stream, including visual annotations such as bounding boxes 
 
 ### System Architecture Diagram
 
-> Place your architecture image here.
-
-```markdown
 ![System Architecture](docs/infant_safety_architecture_portfolio.png)
-```
+
 
 The system is organized into four main layers.
 
