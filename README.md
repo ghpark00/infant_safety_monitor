@@ -11,7 +11,7 @@ This repository contains the FastAPI-based AI analysis server for the Infant Saf
 ### Real-time Monitoring Preview
 
 > Place your demo image here.
-
+![Monitoring Preview](docs/ifs.png)
 ```markdown
 ![Monitoring Preview](docs/ifs.png)
 ```
