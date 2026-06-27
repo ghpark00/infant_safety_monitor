@@ -1,10 +1,9 @@
-# audio_inference.py
 import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
 import os
-from scipy.io.wavfile import write
-from config import (
+
+from ai_backend.config import (
     CRY_MODEL_PATH, YAMNET_MODEL_HANDLE, AUDIO_SAMPLE_RATE,
     CRY_CONF_THRESHOLD, TEMP_AUDIO_FOLDER
 )

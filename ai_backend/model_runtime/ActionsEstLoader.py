@@ -3,7 +3,8 @@ import torch
 import numpy as np
 
 from Actionsrecognition.Models import TwoStreamSpatialTemporalGraph
-from pose_utils import normalize_points_with_size, scale_pose
+from ai_backend.model_runtime.pose_utils import normalize_points_with_size, scale_pose
+from ai_backend.config import TSSTG_WEIGHT_PATH
 
 
 class TSSTG(object):
@@ -13,7 +14,7 @@ class TSSTG(object):
         device: (str) Device to load the model on 'cpu' or 'cuda'.
     """
     def __init__(self,
-                 weight_file='./Models/TSSTG/tsstg-model.pth',
+                 weight_file=TSSTG_WEIGHT_PATH,
                  device='cuda'):
         self.graph_args = {'strategy': 'spatial'}
         self.class_names = ['Standing', 'Walking', 'Sitting', 'Lying Down',

@@ -6,14 +6,14 @@ import argparse
 import numpy as np
 
 from Detection.Utils import ResizePadding
-from CameraLoader import CamLoader, CamLoader_Q
-from DetectorLoader import TinyYOLOv3_onecls
+from ai_backend.model_runtime.CameraLoader import CamLoader, CamLoader_Q
+from ai_backend.model_runtime.DetectorLoader import TinyYOLOv3_onecls
 
-from PoseEstimateLoader import SPPE_FastPose
-from fn import draw_single
+from ai_backend.model_runtime.PoseEstimateLoader import SPPE_FastPose
+from ai_backend.model_runtime.fn import draw_single
 
 from Track.Tracker import Detection, Tracker
-from ActionsEstLoader import TSSTG
+from ai_backend.model_runtime.ActionsEstLoader import TSSTG
 
 #source = '../Data/test_video/test7.mp4'
 #source = '../Data/falldata/Home/Videos/video (2).avi'  # hard detect

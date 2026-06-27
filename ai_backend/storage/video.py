@@ -2,6 +2,9 @@ from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 import cv2
 import datetime
+import os
+
+from ai_backend.config import TEMP_VIDEO_FOLDER
 
 def init_gdrive():
     gauth = GoogleAuth()
@@ -31,7 +34,8 @@ def save_video(frames, camera_id="CAM01"):
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y_%m_%d_%H%M")
     filename = f"{timestamp}_{camera_id}.mp4"
-    local_path = f"./{filename}"
+    os.makedirs(TEMP_VIDEO_FOLDER, exist_ok=True)
+    local_path = os.path.join(TEMP_VIDEO_FOLDER, filename)
 
     print(f"🎬 영상 저장 경로: {local_path}")
     print(f"🎞️ 저장할 프레임 수: {len(frames)}")

@@ -4,7 +4,7 @@ import torch
 
 from SPPE.src.main_fast_inference import InferenNet_fast, InferenNet_fastRes50
 from SPPE.src.utils.img import crop_dets
-from pPose_nms import pose_nms
+from ai_backend.model_runtime.pPose_nms import pose_nms
 from SPPE.src.utils.eval import getPrediction
 
 
