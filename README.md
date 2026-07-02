@@ -425,8 +425,8 @@ Event notifications are sent to the Spring Boot backend using asynchronous HTTP 
 
 ---
 
-## 15. Contributor
+## 14. Contributor
 
-Kyonggi University Basic Capstone Design Project
+Kyonggi University Capstone Design Project
 
 * Kwanho Park — FastAPI AI server development, AI model integration, event detection pipeline, API testing, and backend notification integration
