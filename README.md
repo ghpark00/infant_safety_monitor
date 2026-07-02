@@ -422,20 +422,6 @@ Event notifications are sent to the Spring Boot backend using asynchronous HTTP 
 
 ---
 
-## 14. Portfolio Focus
-
-This project demonstrates the implementation of a real-time AI server that integrates video analysis, audio analysis, event buffering, and backend notification into a single safety monitoring pipeline.
-
-Key engineering points:
-
-* Designed and implemented FastAPI-based AI inference server
-* Integrated real-time video streaming with OpenCV
-* Connected fall detection, pose estimation, and action recognition modules
-* Implemented event-triggered crying detection
-* Built frame-buffer-based event clip saving
-* Implemented REST API control for monitoring START/STOP
-* Integrated asynchronous notification with Spring Boot backend
-* Validated the system through API tests and end-to-end event scenarios
 
 ---
 
